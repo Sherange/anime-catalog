@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Genres snapshot 1`] = `
+Array [
+  <Text
+    style={
+      Object {
+        "color": "#8A8A8E",
+        "fontSize": 12,
+      }
+    }
+  >
+    Action
+     
+    / 
+  </Text>,
+  <Text
+    style={
+      Object {
+        "color": "#8A8A8E",
+        "fontSize": 12,
+      }
+    }
+  >
+    Sci-Fi
+  </Text>,
+]
+`;

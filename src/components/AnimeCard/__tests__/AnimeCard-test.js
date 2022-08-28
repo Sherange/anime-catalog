@@ -88,3 +88,8 @@ describe('<AnimeCard />', () => {
     expect(tree.children.length).toBe(2);
   });
 });
+
+test('AnimeCard snapshot', () => {
+  const snapshot = renderer.create(<AnimeCard item={mockItem} />).toJSON();
+  expect(snapshot).toMatchSnapshot();
+});

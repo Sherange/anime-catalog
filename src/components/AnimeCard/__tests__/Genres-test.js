@@ -21,3 +21,8 @@ const mockData = [
 it('Genres renders correctly', () => {
   renderer.create(<Genres genres={mockData} />);
 });
+
+test('Genres snapshot', () => {
+  const snapshot = renderer.create(<Genres genres={mockData} />).toJSON();
+  expect(snapshot).toMatchSnapshot();
+});

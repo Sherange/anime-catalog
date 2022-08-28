@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnimeCard snapshot 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "borderRadius": 20,
+      "flexDirection": "row",
+      "height": 168,
+      "justifyContent": "flex-start",
+      "marginHorizontal": 16,
+      "marginVertical": 8,
+      "shadowColor": "#000000",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 1,
+      },
+      "shadowOpacity": 0.2,
+      "shadowRadius": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 30,
+        "flex": 1,
+        "marginHorizontal": 8,
+        "marginVertical": 8,
+      }
+    }
+  >
+    <Image
+      resizeMode="cover"
+      source={
+        Object {
+          "uri": "https://cdn.myanimelist.net/images/anime/4/19644.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 20,
+          "height": 150,
+          "width": 100,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 2,
+        "marginHorizontal": 8,
+        "marginVertical": 8,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#22292E",
+          "fontSize": 16,
+          "fontWeight": "600",
+        }
+      }
+    >
+      Cowboy Bebop
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#8A8A8E",
+          "fontSize": 12,
+          "marginTop": 8,
+        }
+      }
+    >
+      TV
+    </Text>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "flexWrap": "wrap",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#8A8A8E",
+            "fontSize": 12,
+          }
+        }
+      >
+        Action
+         
+        / 
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#8A8A8E",
+            "fontSize": 12,
+          }
+        }
+      >
+        Sci-Fi
+      </Text>
+    </View>
+    <Text
+      style={
+        Object {
+          "color": "#8A8A8E",
+          "fontSize": 12,
+        }
+      }
+    >
+      R - 17+ (violence & profanity)
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#D9251D",
+          "fontSize": 14,
+          "fontWeight": "600",
+          "marginTop": 8,
+        }
+      }
+    >
+      8.75
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#8A8A8E",
+          "fontSize": 14,
+          "fontWeight": "600",
+          "marginTop": 8,
+        }
+      }
+    >
+      Y :
+       
+      1998
+    </Text>
+  </View>
+</View>
+`;

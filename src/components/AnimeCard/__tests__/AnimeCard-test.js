@@ -81,3 +81,10 @@ const mockItem = {
 it('AnimeCard renders correctly', () => {
   renderer.create(<AnimeCard item={mockItem} />);
 });
+
+describe('<AnimeCard />', () => {
+  it('has 1 child', () => {
+    const tree = renderer.create(<AnimeCard item={mockItem} />).toJSON();
+    expect(tree.children.length).toBe(2);
+  });
+});

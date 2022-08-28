@@ -1,10 +1,17 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, FlatList, StyleSheet} from 'react-native';
+import AnimeCard from '../../components/AnimeCard/AnimeCard';
 
-const MainScreen = () => {
+const MainScreen = ({data}) => {
+  const renderItem = ({item}) => <AnimeCard item={item} />;
+
   return (
     <View style={styles.mainContainer}>
-      <Text>Main Scren</Text>
+      <FlatList
+        data={data}
+        renderItem={renderItem}
+        keyExtractor={item => item.id}
+      />
     </View>
   );
 };
@@ -12,8 +19,6 @@ const MainScreen = () => {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });
 

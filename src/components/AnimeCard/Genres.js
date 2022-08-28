@@ -12,10 +12,16 @@ const Genres = ({genres}) => {
             {item.name}
           </Text>
         );
-      } else {
+      } else if (index < 2) {
         return (
           <Text key={index} style={styles.genresStyle}>
             {item.name} {'/ '}
+          </Text>
+        );
+      } else if (index === 3) {
+        return (
+          <Text key={index} style={styles.genresStyle}>
+            {item.name}
           </Text>
         );
       }
@@ -32,7 +38,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   genresStyle: {
-    fontSize: 14,
+    fontSize: 12,
     color: secondryLabel,
   },
 });

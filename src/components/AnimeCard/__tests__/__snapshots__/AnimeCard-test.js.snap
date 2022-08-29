@@ -2,6 +2,16 @@
 
 exports[`AnimeCard snapshot 1`] = `
 <View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Object {
       "backgroundColor": "#FFFFFF",
@@ -11,6 +21,7 @@ exports[`AnimeCard snapshot 1`] = `
       "justifyContent": "flex-start",
       "marginHorizontal": 16,
       "marginVertical": 8,
+      "opacity": 1,
       "shadowColor": "#000000",
       "shadowOffset": Object {
         "height": 1,

@@ -7,7 +7,7 @@ import useAnime from '../../hooks/useAnime';
 import AppLoader from '../../components/AppLoader/AppLoader';
 import {backgroundColor} from '../../constans/theme';
 
-const DetailScreen = () => {
+const DetailScreen = props => {
   const {getAnimeById} = useAnime();
   //get state from redux-store
   const {animeDetail} = useSelector(state => state.anime);
@@ -15,7 +15,8 @@ const DetailScreen = () => {
   const [isLoading, setIsloading] = useState(true);
 
   useEffect(() => {
-    getAnimeById(44);
+    const id = props.route.params;
+    getAnimeById(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

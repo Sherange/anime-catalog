@@ -5,7 +5,7 @@ import AnimeCard from '../../components/AnimeCard/AnimeCard';
 import AppLoader from '../../components/AppLoader/AppLoader';
 import useAnime from '../../hooks/useAnime';
 
-const MainScreen = () => {
+const MainScreen = ({navigation}) => {
   const {fetchAnimeList} = useAnime();
   //get state from redux-store
   const {animeList, has_next_page} = useSelector(state => state.anime);
@@ -40,7 +40,13 @@ const MainScreen = () => {
     return <AppLoader />;
   };
 
-  const renderItem = ({item}) => <AnimeCard item={item} />;
+  const navigateDetailScreen = id => {
+    navigation.navigate('DetailScreen', id);
+  };
+
+  const renderItem = ({item}) => (
+    <AnimeCard item={item} navigateDetailScreen={navigateDetailScreen} />
+  );
 
   return (
     <View style={styles.mainContainer}>

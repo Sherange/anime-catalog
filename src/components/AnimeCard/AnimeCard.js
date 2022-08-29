@@ -1,14 +1,19 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, TouchableOpacity, Text, Image, StyleSheet} from 'react-native';
 import PropTypes from 'prop-types';
 
 import {primaryLabel, primaryColor, secondryLabel} from '../../constans/theme';
 import Genres from './Genres';
 
 const AnimeCard = props => {
-  const {images, title, type, genres, rating, score, year} = props.item;
+  const {images, title, type, genres, rating, score, year, mal_id} = props.item;
+
   return (
-    <View style={styles.cardContainer}>
+    <TouchableOpacity
+      style={styles.cardContainer}
+      onPress={() => {
+        props.navigateDetailScreen(mal_id);
+      }}>
       <View style={styles.imageContainer}>
         <Image
           source={{uri: images.jpg.image_url}}
@@ -30,7 +35,7 @@ const AnimeCard = props => {
           {'Y :'} {year == null ? 'N/A' : year}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

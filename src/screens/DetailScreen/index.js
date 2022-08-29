@@ -15,8 +15,10 @@ const DetailScreen = props => {
   const [isLoading, setIsloading] = useState(true);
 
   useEffect(() => {
-    const id = props.route.params;
-    getAnimeById(id);
+    const id = props.route && props.route.params;
+    if (id) {
+      getAnimeById(id);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

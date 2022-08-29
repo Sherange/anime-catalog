@@ -17,10 +17,8 @@ import {backgroundColor} from './src/constans/theme';
 const App = () => {
   return (
     <Provider store={store}>
-      <SafeAreaView style={styles.safeArea}>
-        <StatusBar barStyle={'dark-content'} />
-        <DetailScreen />
-      </SafeAreaView>
+      <StatusBar barStyle={'dark-content'} />
+      <DetailScreen />
     </Provider>
   );
 };

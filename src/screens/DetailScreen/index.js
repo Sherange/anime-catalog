@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
-import {View, StyleSheet} from 'react-native';
+import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 import ImageCard from './ImageCard';
 import InfoCard from './InfoCard';
 import useAnime from '../../hooks/useAnime';
 import AppLoader from '../../components/AppLoader/AppLoader';
+import {backgroundColor} from '../../constans/theme';
 
 const DetailScreen = () => {
   const {getAnimeById} = useAnime();
@@ -25,23 +26,26 @@ const DetailScreen = () => {
   }, [animeDetail]);
 
   return (
-    <View style={styles.detailContainer}>
+    <ScrollView style={styles.detailContainer}>
       {isLoading ? (
         <AppLoader />
       ) : (
         <>
-          <ImageCard images={animeDetail.images} />
+          <SafeAreaView>
+            <ImageCard images={animeDetail.images} />
+          </SafeAreaView>
+
           <InfoCard item={animeDetail} />
         </>
       )}
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   detailContainer: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: backgroundColor,
   },
 });
 

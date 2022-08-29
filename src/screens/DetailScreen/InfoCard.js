@@ -1,12 +1,27 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import {primaryLabel, secondryLabel} from '../../constans/theme';
+import {
+  primaryLabel,
+  secondryTextColor,
+  secondryLabel,
+} from '../../constans/theme';
+import RatingCard from '../../components/RatingCard/RatingCard';
 
 const InfoCard = props => {
-  const {title, genres, synopsis} = props.item;
+  const {
+    title_english,
+    genres,
+    synopsis,
+    rank,
+    score,
+    rating,
+    duration,
+    popularity,
+  } = props.item;
   return (
     <View style={styles.infoContainer}>
-      <Text style={styles.titleStyle}>{title}</Text>
+      <Text style={styles.titleStyle}>{title_english}</Text>
+
       <View style={styles.genresRow}>
         {genres &&
           genres.map((genre, key) => (
@@ -15,6 +30,14 @@ const InfoCard = props => {
             </Text>
           ))}
       </View>
+
+      <View style={styles.ratingCardsRow}>
+        <RatingCard title="Rank" rate={rank} />
+        <RatingCard title="Score" rate={score} />
+        <RatingCard title="Popularity" rate={popularity} />
+      </View>
+      <Text style={styles.ratingText}>{rating}</Text>
+      <Text style={styles.durationText}>{duration}</Text>
       <Text style={styles.decriptionTextStyle}>{synopsis}</Text>
     </View>
   );
@@ -37,16 +60,34 @@ const styles = StyleSheet.create({
   },
   genresRow: {
     flexDirection: 'row',
-    marginTop: 8,
+    marginVertical: 8,
   },
   genresTextStyle: {
     fontSize: 14,
     color: secondryLabel,
   },
   decriptionTextStyle: {
-    marginTop: 8,
+    marginVertical: 8,
     fontSize: 14,
     color: secondryLabel,
+    lineHeight: 25,
+  },
+  ratingCardsRow: {
+    marginVertical: 8,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+  },
+  ratingText: {
+    marginVertical: 8,
+    fontSize: 14,
+    fontWeight: '600',
+    color: secondryTextColor,
+  },
+  durationText: {
+    marginVertical: 8,
+    fontSize: 14,
+    fontWeight: '600',
+    color: secondryTextColor,
   },
 });
 

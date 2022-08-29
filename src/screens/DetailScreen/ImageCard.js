@@ -6,18 +6,20 @@ const ImageCard = props => {
   const {images} = props;
   return (
     <View style={styles.imageContainer}>
-      <Image
-        source={{uri: images.jpg.large_image_url}}
-        style={styles.imageStyle}
-        resizeMode="cover"
-      />
+      {images && images.jpg && (
+        <Image
+          source={{uri: images.jpg.large_image_url}}
+          style={styles.imageStyle}
+          resizeMode="cover"
+        />
+      )}
     </View>
   );
 };
 
 ImageCard.propTypes = {
   images: PropTypes.shape({
-    jpg: PropTypes.object.isRequired,
+    jpg: PropTypes.object,
   }),
 };
 

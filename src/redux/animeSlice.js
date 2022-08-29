@@ -4,6 +4,7 @@ const initialState = {
   animeList: [],
   has_next_page: true,
   current_page: 0,
+  animeDetail: null,
 };
 
 export const animeSlice = createSlice({
@@ -22,11 +23,19 @@ export const animeSlice = createSlice({
     setCurrentPage: (state, action) => {
       state.current_page = action.payload;
     },
+    setAnimeDetail: (state, action) => {
+      state.animeDetail = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const {setAnimeList, setAnimeMoreData, setHasNextPage, setCurrentPage} =
-  animeSlice.actions;
+export const {
+  setAnimeList,
+  setAnimeMoreData,
+  setHasNextPage,
+  setCurrentPage,
+  setAnimeDetail,
+} = animeSlice.actions;
 
 export default animeSlice.reducer;

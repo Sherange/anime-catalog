@@ -6,6 +6,7 @@ import {
   setAnimeMoreData,
   setHasNextPage,
   setCurrentPage,
+  setAnimeDetail,
 } from '../redux/animeSlice';
 import {baseUrl, endPoints} from '../constans/api';
 
@@ -34,7 +35,21 @@ const useAnime = () => {
     }
   };
 
-  return {fetchAnimeList};
+  const getAnimeById = async id => {
+    try {
+      const responce = await axios.get(baseUrl + endPoints.amime + id, {
+        headers: {Accept: 'application/json'},
+      });
+
+      if (responce && responce.status === 200) {
+        dispatch(setAnimeDetail(responce.data.data));
+      }
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
+  return {fetchAnimeList, getAnimeById};
 };
 
 export default useAnime;

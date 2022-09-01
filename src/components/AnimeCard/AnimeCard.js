@@ -43,10 +43,10 @@ AnimeCard.propTypes = {
   item: PropTypes.shape({
     images: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
+    type: PropTypes.string,
     genres: PropTypes.array,
-    rating: PropTypes.string.isRequired,
-    score: PropTypes.number.isRequired,
+    rating: PropTypes.string,
+    score: PropTypes.number,
     year: PropTypes.number,
   }),
 };

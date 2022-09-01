@@ -5,6 +5,7 @@ const initialState = {
   has_next_page: true,
   current_page: 0,
   animeDetail: null,
+  isLoading: false,
 };
 
 export const animeSlice = createSlice({
@@ -26,6 +27,9 @@ export const animeSlice = createSlice({
     setAnimeDetail: (state, action) => {
       state.animeDetail = action.payload;
     },
+    setIsLoading: (state, action) => {
+      state.isLoading = action.payload;
+    },
   },
 });
 
@@ -36,6 +40,7 @@ export const {
   setHasNextPage,
   setCurrentPage,
   setAnimeDetail,
+  setIsLoading,
 } = animeSlice.actions;
 
 export default animeSlice.reducer;

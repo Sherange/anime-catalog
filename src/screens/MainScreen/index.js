@@ -1,38 +1,42 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {View, FlatList, StyleSheet} from 'react-native';
+import {useIsFocused} from '@react-navigation/core';
+
 import AnimeCard from '../../components/AnimeCard/AnimeCard';
 import AppLoader from '../../components/AppLoader/AppLoader';
 import useAnime from '../../hooks/useAnime';
 
-const MainScreen = ({navigation}) => {
-  const {fetchAnimeList} = useAnime();
-  //get state from redux-store
-  const {animeList, has_next_page} = useSelector(state => state.anime);
+const MainScreen = props => {
+  const {navigation, route} = props;
+  const {params} = route;
+  const isFocused = useIsFocused();
+  const {fetchAnimeList, fetchNextPage} = useAnime();
 
-  //isLoading
-  const [isLoading, setIsloading] = useState(true);
+  //get state from redux-store
+  const {animeList, has_next_page, isLoading} = useSelector(
+    state => state.anime,
+  );
 
   //pagination
   const [page, setPage] = useState(1);
 
+  //fetch anime list on tab change
   useEffect(() => {
-    if (page === 1) {
-      fetchAnimeList(page);
-    }
+    let queryParams = params;
+    queryParams.page = page;
+    fetchAnimeList(queryParams);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    if (animeList && animeList.length > 0) {
-      setIsloading(false);
-    }
-  }, [animeList]);
-
+  //fetch anime list on scroll
   const fetchMoreData = () => {
     if (has_next_page) {
+      let queryParams = params;
+      queryParams.page = page + 1;
       setPage(page + 1);
-      fetchAnimeList(page + 1);
+      fetchNextPage(queryParams);
     }
   };
 

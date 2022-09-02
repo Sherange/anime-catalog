@@ -1,9 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {
   primaryLabel,
   secondryTextColor,
   secondryLabel,
+  primaryColor,
 } from '../../constans/theme';
 import RatingCard from '../../components/RatingCard/RatingCard';
 
@@ -13,7 +15,22 @@ const InfoCard = props => {
 
   return (
     <View style={styles.infoContainer}>
-      {title && <Text style={styles.titleStyle}>{title}</Text>}
+      <View style={styles.titleWrapper}>
+        {title && <Text style={styles.titleStyle}>{title}</Text>}
+        {props.isFav ? (
+          <TouchableOpacity onPress={props.addToFav}>
+            <MaterialIcons name="favorite" size={20} color={primaryColor} />
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity onPress={props.addToFav}>
+            <MaterialIcons
+              name="favorite-border"
+              size={20}
+              color={primaryColor}
+            />
+          </TouchableOpacity>
+        )}
+      </View>
 
       <View style={styles.genresRow}>
         {genres &&
@@ -84,6 +101,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     color: secondryTextColor,
+  },
+  titleWrapper: {
+    flexDirection: 'row',
+    marginRight: 20,
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
   },
 });
 

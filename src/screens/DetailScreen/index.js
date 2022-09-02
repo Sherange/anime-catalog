@@ -13,6 +13,7 @@ const DetailScreen = props => {
   const {animeDetail} = useSelector(state => state.anime);
   //isLoading
   const [isLoading, setIsloading] = useState(true);
+  const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
     const id = props.route && props.route.params;
@@ -28,6 +29,10 @@ const DetailScreen = props => {
     }
   }, [animeDetail]);
 
+  const addToFav = () => {
+    setIsFav(!isFav);
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.detailContainer}>
       <StatusBar backgroundColor={backgroundColor} barStyle={'dark-content'} />
@@ -39,7 +44,7 @@ const DetailScreen = props => {
             <ImageCard images={animeDetail.images} />
           </SafeAreaView>
 
-          <InfoCard item={animeDetail} />
+          <InfoCard item={animeDetail} addToFav={addToFav} isFav={isFav} />
         </>
       )}
     </ScrollView>

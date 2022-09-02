@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
-import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
+import {SafeAreaView, ScrollView, StyleSheet, StatusBar} from 'react-native';
 import ImageCard from './ImageCard';
 import InfoCard from './InfoCard';
 import useAnime from '../../hooks/useAnime';
@@ -29,7 +29,8 @@ const DetailScreen = props => {
   }, [animeDetail]);
 
   return (
-    <ScrollView style={styles.detailContainer}>
+    <ScrollView contentContainerStyle={styles.detailContainer}>
+      <StatusBar backgroundColor={backgroundColor} barStyle={'dark-content'} />
       {isLoading ? (
         <AppLoader />
       ) : (
@@ -47,7 +48,7 @@ const DetailScreen = props => {
 
 const styles = StyleSheet.create({
   detailContainer: {
-    flex: 1,
+    flexGrow: 1,
     backgroundColor: backgroundColor,
   },
 });

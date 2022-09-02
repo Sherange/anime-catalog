@@ -28,9 +28,11 @@ const TabNavigator = () => {
           unmountOnBlur: true,
           headerShown: false,
           tabBarShowLabel: true,
+          tabBarActiveTintColor: primaryColor,
+          tabBarInactiveTintColor: secondryTextColor,
           tabBarIcon: ({focused}) => (
             <MaterialCommunityIcons
-              name="home"
+              name="format-list-bulleted"
               size={30}
               color={focused ? primaryColor : secondryTextColor}
             />
@@ -47,9 +49,11 @@ const TabNavigator = () => {
           unmountOnBlur: true,
           headerShown: false,
           tabBarShowLabel: true,
+          tabBarActiveTintColor: primaryColor,
+          tabBarInactiveTintColor: secondryTextColor,
           tabBarIcon: ({focused}) => (
             <MaterialCommunityIcons
-              name="home"
+              name="format-list-bulleted"
               size={30}
               color={focused ? primaryColor : secondryTextColor}
             />
@@ -66,9 +70,11 @@ const TabNavigator = () => {
           unmountOnBlur: true,
           headerShown: false,
           tabBarShowLabel: true,
+          tabBarActiveTintColor: primaryColor,
+          tabBarInactiveTintColor: secondryTextColor,
           tabBarIcon: ({focused}) => (
             <MaterialCommunityIcons
-              name="home"
+              name="format-list-bulleted"
               size={30}
               color={focused ? primaryColor : secondryTextColor}
             />

@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
-import {View, FlatList, StyleSheet} from 'react-native';
+import {View, FlatList, StyleSheet, StatusBar, Text} from 'react-native';
 import {useIsFocused} from '@react-navigation/core';
 
 import AnimeCard from '../../components/AnimeCard/AnimeCard';
 import AppLoader from '../../components/AppLoader/AppLoader';
 import useAnime from '../../hooks/useAnime';
+import {backgroundColor} from '../../constans/theme';
 
 const MainScreen = props => {
   const {navigation, route} = props;
@@ -54,6 +55,11 @@ const MainScreen = props => {
 
   return (
     <View style={styles.mainContainer}>
+      <StatusBar translucent backgroundColor={'#000000'} />
+      <View style={styles.titleWrapper}>
+        <Text style={styles.titleHeader}>Anime Catalog</Text>
+      </View>
+
       {isLoading ? (
         <AppLoader />
       ) : (
@@ -73,6 +79,19 @@ const MainScreen = props => {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
+    backgroundColor: backgroundColor,
+  },
+  titleWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingVertical: 16,
+    paddingTop: 40,
+    backgroundColor: 'red',
+  },
+  titleHeader: {
+    fontSize: 16,
+    fontWeight: '800',
+    color: '#FFFFFF',
   },
 });
 

@@ -8,19 +8,12 @@ import {
 import RatingCard from '../../components/RatingCard/RatingCard';
 
 const InfoCard = props => {
-  const {
-    title_english,
-    genres,
-    synopsis,
-    rank,
-    score,
-    rating,
-    duration,
-    popularity,
-  } = props.item;
+  const {title, genres, synopsis, rank, score, rating, duration, popularity} =
+    props.item;
+
   return (
     <View style={styles.infoContainer}>
-      <Text style={styles.titleStyle}>{title_english}</Text>
+      {title && <Text style={styles.titleStyle}>{title}</Text>}
 
       <View style={styles.genresRow}>
         {genres &&
@@ -36,16 +29,19 @@ const InfoCard = props => {
         <RatingCard title="Score" rate={score} />
         <RatingCard title="Popularity" rate={popularity} />
       </View>
-      <Text style={styles.ratingText}>{rating}</Text>
-      <Text style={styles.durationText}>{duration}</Text>
-      <Text style={styles.decriptionTextStyle}>{synopsis}</Text>
+      {rating && <Text style={styles.ratingText}>{rating}</Text>}
+      {rating && <Text style={styles.durationText}>{duration}</Text>}
+      <Text style={styles.durationText}>{'Description'}</Text>
+      <Text style={styles.decriptionTextStyle}>
+        {synopsis == null ? 'N/A' : synopsis}
+      </Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   infoContainer: {
-    flex: 2,
+    flexGrow: 1,
     backgroundColor: '#FFFFFF',
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,

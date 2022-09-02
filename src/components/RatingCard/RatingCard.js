@@ -8,7 +8,7 @@ const RatingCard = props => {
   return (
     <View style={styles.ratingCard}>
       <Text>{title}</Text>
-      <Text style={styles.ratingCardText}>{rate}</Text>
+      <Text style={styles.ratingCardText}>{rate == null ? 'N/A' : rate}</Text>
     </View>
   );
 };
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 20,
     backgroundColor: '#FFFFFF',
+    borderWidth: 0.1,
     shadowColor: '#000000',
     shadowOpacity: 0.2,
     shadowRadius: 1,

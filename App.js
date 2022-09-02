@@ -11,13 +11,13 @@ import {Provider} from 'react-redux';
 import {NavigationContainer} from '@react-navigation/native';
 
 import {store} from './src/redux/store';
-import TabNavigator from './src/navigation/';
+import DrawerNavigator from './src/navigation/DrawerNavigator';
 
 const App = () => {
   return (
     <NavigationContainer>
       <Provider store={store}>
-        <TabNavigator />
+        <DrawerNavigator />
       </Provider>
     </NavigationContainer>
   );

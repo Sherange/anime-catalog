@@ -32,7 +32,7 @@ const TabNavigator = () => {
           tabBarInactiveTintColor: secondryTextColor,
           tabBarIcon: ({focused}) => (
             <MaterialCommunityIcons
-              name="format-list-bulleted"
+              name="credit-card"
               size={30}
               color={focused ? primaryColor : secondryTextColor}
             />
@@ -53,7 +53,7 @@ const TabNavigator = () => {
           tabBarInactiveTintColor: secondryTextColor,
           tabBarIcon: ({focused}) => (
             <MaterialCommunityIcons
-              name="format-list-bulleted"
+              name="contacts"
               size={30}
               color={focused ? primaryColor : secondryTextColor}
             />
@@ -74,7 +74,7 @@ const TabNavigator = () => {
           tabBarInactiveTintColor: secondryTextColor,
           tabBarIcon: ({focused}) => (
             <MaterialCommunityIcons
-              name="format-list-bulleted"
+              name="file-image"
               size={30}
               color={focused ? primaryColor : secondryTextColor}
             />

@@ -1,12 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
-import {View, FlatList, StyleSheet, StatusBar, Text} from 'react-native';
+import {
+  View,
+  FlatList,
+  StyleSheet,
+  StatusBar,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 import {useIsFocused} from '@react-navigation/core';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import AnimeCard from '../../components/AnimeCard/AnimeCard';
 import AppLoader from '../../components/AppLoader/AppLoader';
 import useAnime from '../../hooks/useAnime';
-import {backgroundColor} from '../../constans/theme';
+import {backgroundColor, primaryColor} from '../../constans/theme';
 
 const MainScreen = props => {
   const {navigation, route} = props;
@@ -57,6 +65,16 @@ const MainScreen = props => {
     <View style={styles.mainContainer}>
       <StatusBar translucent backgroundColor={'#000000'} />
       <View style={styles.titleWrapper}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.openDrawer();
+          }}>
+          <MaterialCommunityIcons
+            name="format-list-bulleted"
+            size={20}
+            color={'#000000'}
+          />
+        </TouchableOpacity>
         <Text style={styles.titleHeader}>Anime Catalog</Text>
       </View>
 
@@ -83,9 +101,10 @@ const styles = StyleSheet.create({
   },
   titleWrapper: {
     flexDirection: 'row',
-    justifyContent: 'center',
-    paddingVertical: 16,
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
     paddingTop: 40,
+    paddingBottom: 16,
     backgroundColor: 'red',
   },
   titleHeader: {

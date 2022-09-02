@@ -1,16 +1,14 @@
 # Anime Catalog App
 
-<img src="main.png" alt="main" width="40%"/>
-<img src="detail.png" alt="detail" width="40%"/>
-
-React Native Mobile App
-
-- For Android:
-- For IOS:
+<img src="main.png" alt="main" width="30%"/>
+<img src="detail.png" alt="detail" width="30%"/>
 
 ## Getting Started
 
-This is a react native mobile application. This app code is preloaded with some basic libraries and basic app architecture.
+This is a react native mobile application. This app code is pre-loaded with some basic libraries and basic app architecture.
+
+App list down the list anime data using using open api service - https://docs.api.jikan.moe
+<br></br>
 
 ## How to Use
 
@@ -42,17 +40,33 @@ yarn start
 yarn run ios
 ```
 
+<br></br>
+
+## Available Scripts
+
+```
+yarn test
+```
+
+Launches the test runner with jest for unit testing
+
+<br></br>
+
 ## App Features:
 
-- Main Screen
-- Detail Screen
-- Favourite Screen
+- Main Screen - anime list view with bottom navigation and pagination
+- Detail Screen - anime detail info with add to favourite option
+- Favourite Screen - not completed
+
+<br></br>
 
 ### Libraries & Tools Used
 
 - [Redux Toolkit](https://redux-toolkit.js.org)
 - [React Navigation](https://reactnavigation.org)
 - [React Native Vector Icons ](https://github.com/oblador/react-native-vector-icons)
+
+<br></br>
 
 ### Folder Structure
 
@@ -77,7 +91,7 @@ src/
 |- App.js
 ```
 
-Now, lets dive into the lib folder which has the main code for the application.
+Source folder which has the main code for the application.
 
 ```
 1 components
